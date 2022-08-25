@@ -62,15 +62,15 @@ class Receipt(models.Model):
     
 
 class ThirdParty(models.Model):
-        full_name = models.CharField(max_length=20)
-        email = models.EmailField(blank= True)
-        phone_number = models.CharField(max_length= 15,blank=True)
-        transaction_cost = models.PositiveIntegerField(null = True)
-        currency = models.ForeignKey(Currency,on_delete= models.CASCADE,related_name='currency_thirdparty')
-        is_active = models.BooleanField(default= False)
-        account = models.ForeignKey(Account,on_delete= models.CASCADE,related_name='account_thirdparty')
-        def __str__(self):
-            return self.full_name
+    full_name = models.CharField(max_length=20)
+    email = models.EmailField(blank= True)
+    phone_number = models.CharField(max_length= 15,blank=True)
+    transaction_cost = models.PositiveIntegerField(null = True)
+    currency = models.ForeignKey(Currency,on_delete= models.CASCADE,related_name='currency_thirdparty')
+    is_active = models.BooleanField(default= False)
+    account = models.ForeignKey(Account,on_delete= models.CASCADE,related_name='account_thirdparty')
+    def __str__(self):
+        return self.full_name
             
 
 STATUS_CHOICES = (("Complete", "Complete"), ("Incomplete", "Incomplete"), ("Pending", "Pending"))
