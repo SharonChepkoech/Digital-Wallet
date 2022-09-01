@@ -82,6 +82,7 @@ class Transaction(models.Model):
     transaction_date_time = models.DateTimeField(null = True,blank= True)
     receipt = models.OneToOneField(Receipt,on_delete=models.CASCADE,related_name='receipt_transaction')
     origin_account= models.ForeignKey(Account,on_delete=models.CASCADE,related_name= 'account_transaction')
+    destination_account = models.ForeignKey(Account, on_delete= models.CASCADE, related_name= 'transaction_account', null= True)
     third_party= models.ForeignKey(ThirdParty,on_delete= models.CASCADE,related_name='third_party_transaction')
     status = models.CharField(max_length= 18, choices=STATUS_CHOICES, null= True)
     transaction_cost = models.PositiveIntegerField(null= True)
