@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-   <h2>Loan Requat</h2> 
-   <form method="POST" class="registration_form" >
-    {%csrf_token%} {{form.as_p}}
-    <button type="submit" class="submit_button" > Request Loan </button>
+    <h2>Loan Request</h2>
+    <form method="POST" class="registration_form">
+        {%csrf_token%}
+        <!-- {{form.as_p}} -->
+        <label for="amount" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Amount
+            {{form.amount}}
+        </label>
+        <label for="wallet" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Wallet
+            {{form.wallet}}
+        </label>
+        <label for="interest_rate" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Interest Rate
+            {{form.interest_rate}}
+        </label>z
+        <label for="guarantee" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Guarantee
+            {{form.guarantee}}
+        </label>
+        <label for="borrow_date_and_time" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Borrow Time
+            and Date
+            {{form.borrow_date_and_time}}
+        </label>
+        <label for="payment_due_date" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Payment Due Date
+            {{form.payment_due_date}}
+        </label>
+        <label for="loan_balance" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Loan Balance
+            {{form.loan_balance}}
+        </label>
+        <label for="loan_term" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Loan Term
+            {{form.loan_term}}
+        </label>
+        <label for="loan_status" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Loan Status
+            {{form.loan_status}}
+        </label>
+        <label for="duration" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% "> Duration
+            {{form.duration}}
+        </label>
+        <button type="submit" class="submit_button"> Request Loan </button>
 
     </form>
 </body>
+
 </html>

@@ -30,34 +30,42 @@ def add_currency(request):
     form = CurrencyAdditionForm()
     return render(request, "wallet/add_currency.html",
     {"form":form})
+    
 def create_account(request):
     form = AccountCreationForm()
     return render(request, "wallet/create_account.html",
     {"form":form})
+    
 def request_loan(request):
     form = LoanRequestForm()
     return render(request, "wallet/request_loan.html",
     {"form":form})
+
 def send_notification(request):
     form = SendNotification()
     return render(request, "wallet/send_notification.html",
     {"form":form})
+
 def add_receipt(request):
     form = AddReceipt()
     return render(request, "wallet/add_receipt.html",
     {"form":form})
+
 def add_reward(request):
     form = AddReward()
     return render(request, "wallet/add_reward.html",
     {"form":form})
+
 def add_third_party(request):
     form = ThirdParty()
     return render(request, "wallet/add_third_party.html",
     {"form":form})
+
 def make_transaction(request):
     form = MakeTransaction()
     return render(request, "wallet/make_transaction.html",
     {"form":form})
+
 def add_wallet(request):
     form = AddWallet()
     return render(request, "wallet/add_wallet.html",

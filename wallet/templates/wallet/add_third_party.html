@@ -7,9 +7,39 @@
     <title>Document</title>
 </head>
 <body>
+        fields =  ("full_name","email","phone_number","transaction_cost","currency","is_active","account")
+
    <h2>Add Third Party</h2> 
    <form method="POST" class="registration_form" >
-    {%csrf_token%} {{form.as_p}}
+    {%csrf_token%} 
+    <!-- {{form.as_p}} -->
+    <label for="full_name" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="email" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
+    <label for="" , style="color: #242582; font-size:large;margin: 0% 5% 0% 9% ">
+        {{form.}}
+    </label>
     <button type="submit" class="submit_button" > Add Third Party </button>
 
     </form>
