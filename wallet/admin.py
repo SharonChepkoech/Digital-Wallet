@@ -58,5 +58,3 @@ admin.site.register(Notification,NotificationAdmin)
 admin.site.register(Receipt,ReceiptAdmin)
 admin.site.register(Loan,LoanAdmin)
 admin.site.register(Reward, RewardAdmin)
-
-

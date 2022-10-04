@@ -7,7 +7,7 @@ from .models import Account, Card, Currency, Customer, Loan, Notification, Recei
 class CustomerRegistrationForm(forms.ModelForm):
     class Meta:
         model = Customer
-        fields = ("first_name","last_name","gender","address","age","nationality","user_id","email","phone_number","employed","occupation","marital_status","profile_picture")
+        fields = ("first_name","last_name","gender","address","age","nationality","user_id","email","phone_number","employed","occupation","marital_status")
         widgets = {
             "first_name":forms.TextInput(attrs={'class':"form-control"}),
             "last_name":forms.TextInput(attrs={'class':"form-control"}),
@@ -16,16 +16,15 @@ class CustomerRegistrationForm(forms.ModelForm):
             "nationality":forms.Select(attrs={'class':"form-control"}),
             "email":forms.TextInput(attrs={'class':"form-control"}),
             "phone_number":forms.TextInput(attrs={'class':"form-control"}),
-            "employed":forms.Select(attrs={'class':"form-control"}),
+            "employed":forms.TextInput(attrs={'class':"form-control"}),
             "occupation":forms.TimeInput(attrs={'class':"form-control"}),
             "marital_status":forms.Select(attrs={'class':"form-control"}),
-            "profile_picture":forms.FileInput(attrs={'class':"form-control"}),
         }
 
 class CardAdditionForm(forms.ModelForm):
     class Meta:
         model = Card
-        fields = ("card_name","card_number", "card_type","expiry_date","card_status","cvv","account","issuer","signature")
+        fields = ("card_name","card_number", "card_type","expiry_date","card_status","cvv","account","issuer",)
         widgets = {
             "card_name":forms.TextInput(attrs={'class':"form-control"}),
             "card_number":forms.TextInput(attrs={'class':"form-control"}),
@@ -36,7 +35,6 @@ class CardAdditionForm(forms.ModelForm):
             "account":forms.Select(attrs={'class':"form-control"}),
             "account":forms.TextInput(attrs={'class':"form-control"}),
             "issuer":forms.TextInput(attrs={'class':"form-control"}),
-            "signature":forms.FileInput(attrs={'class':"form-control"}),    
         }
 
 

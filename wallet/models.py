@@ -17,10 +17,11 @@ class Customer(models.Model):
     user_id = models.CharField(max_length = 25)
     email = models.EmailField()
     phone_number =models.CharField(max_length= 25,null= True)
-    employed = models.BooleanField(null=True, choices=EMPLOYED_CHOICE)
+    employed = models.CharField(null= True, max_length=25)
+    # employed = models.BooleanField(null=True, choices=EMPLOYED_CHOICE)
     occupation = models.CharField( null= True,max_length=25)
     marital_status = models.CharField(max_length= 25,choices= MARITAL_CHOICES,blank=True)
-    profile_picture = models.ImageField(upload_to = None, height_field= None, width_field= None,blank = True)
+    profile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
     def __str__(self): 
         return self.first_name
         
@@ -49,7 +50,7 @@ class Account(models.Model):
     account_name = models.CharField(max_length= 15,blank=True)
     account_number = models.CharField(max_length=15, blank=True)
     balance = models.DecimalField(max_digits=10,decimal_places= 3,default=0)
-    wallet = models.ForeignKey(Wallet, on_delete= models.CASCADE,related_name= 'account_wallet')
+    wallet = models.ForeignKey(Wallet, on_delete= models.CASCADE,related_name= 'account_wallet', null = True)
     def __str__(self):
         return self.account_name
 
@@ -102,7 +103,6 @@ class Card(models.Model):
     cvv = models.SmallIntegerField(null= True)
     account = models.ForeignKey(Account,on_delete= models.CASCADE,related_name='account_card')
     issuer = models.CharField(max_length= 12,null= True)
-    signature = models.ImageField(default = False)
     def __str__(self):
         return self.card_name
     
